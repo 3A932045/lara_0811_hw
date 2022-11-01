@@ -31,3 +31,13 @@ Route::get('/about',function (){
 Route::get('/news',function (){
     return view('welcome');
 })->name('news.index');
+/**
+ * 串接Controller
+ */
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\NewsController;
+
+Route::get('/',[HomeController::class,'index'])->name('home.index');
+Route::get('/about',[AboutController::class,'index'])->name('about.index');
+Route::get('/news',[NewsController::class,'index'])->name('news.index');
