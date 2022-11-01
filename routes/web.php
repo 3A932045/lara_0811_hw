@@ -13,6 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/**
+ * 首頁
+ */
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home.index');
+/**
+ * 關於本站
+ */
+Route::get('/about',function (){
+    return view('welcome');
+})->name('about.index');
+/**
+ * 最新消息
+ */
+Route::get('/news',function (){
+    return view('welcome');
+})->name('news.index');
